@@ -23,3 +23,5 @@ ADD webvirtmgr.conf /etc/nginx/conf.d/
 ADD webvirtmgrd.conf /etc/supervisord.d/
 ADD id_dsa /root/.ssh/
 RUN chmod 600 /root/.ssh/id_dsa
+
+EXPOSE 6080 8080
