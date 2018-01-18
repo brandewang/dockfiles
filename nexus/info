@@ -1,0 +1,17 @@
+#nexus maven private repository
+cd /usr/local/src
+
+wget https://sonatype-download.global.ssl.fastly.net/nexus/3/nexus-3.0.0-03-unix.tar.gz
+
+tar zxvf nexus-3.0.0-03-unix.tar.gz -C /usr/local
+
+adduser nexus
+
+chown -R nexus:nexuse /usr/local/nexus-3.0.0-03
+
+vi /usr/local/nexus-3.0.0-03/bin/nexus.rc
+run_as_user="nexus"
+
+ln -s /usr/local/nexus-3.0.0-03/bin/nexus /etc/init.d/nexus
+
+/etc/init.d/nexus start
