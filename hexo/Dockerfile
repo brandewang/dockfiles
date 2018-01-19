@@ -15,7 +15,9 @@ npm install -g hexo-cli &&\
 #hexo build site
 hexo init /data/hexo &&\
 cd /data/hexo &&\
-npm install
+npm install &&\
+ln -s /root/.nvm/versions/node/v9.4.0/bin/hexo /usr/local/sbin/ &&\
+ln -s /root/.nvm/versions/node/v9.4.0/bin/node /usr/local/bin/node
 
 
 #Configure daemon
