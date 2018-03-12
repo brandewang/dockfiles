@@ -20,6 +20,11 @@ RUN	cd /usr/local/src/nginx-1.12.2 &&\
 	ln -s /usr/local/nginx/sbin/nginx /usr/bin/nginx &&\
 	mkdir /etc/nginx/conf.d && mkdir /etc/nginx/iplist
 
+#set vim syntax for nginx
+RUN cd  /usr/share/vim/vim74/syntax &&\
+	wget -O nginx.vim https://vim.sourceforge.io/scripts/download_script.php?src_id=19394 &&\
+	echo 'au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*  set ft=nginx' >> /usr/share/vim/vim74/filetype.vim
+
 #ADD config file
 ADD nginx.conf /etc/nginx/nginx.conf
 
