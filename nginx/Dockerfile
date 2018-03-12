@@ -22,7 +22,7 @@ RUN	cd /usr/local/src/nginx-1.12.2 &&\
 
 #set vim syntax for nginx
 RUN cd  /usr/share/vim/vim74/syntax &&\
-	wget -O nginx.vim https://vim.sourceforge.io/scripts/download_script.php?src_id=19394 &&\
+	wget --timeout=20 -O nginx.vim https://vim.sourceforge.io/scripts/download_script.php?src_id=19394 &&\
 	echo 'au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*  set ft=nginx' >> /usr/share/vim/vim74/filetype.vim
 
 #ADD config file
