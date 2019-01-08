@@ -24,3 +24,5 @@ ln -s /root/.nvm/versions/node/*/bin/node /usr/local/bin/node
 ADD hexod.conf /etc/supervisord.d/
 
 EXPOSE 4000
+VOLUME ["/data/hexo/source/_posts/",]
+
