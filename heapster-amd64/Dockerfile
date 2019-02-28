@@ -1,5 +1,5 @@
-FROM gcr.io/google_containers/heapster-amd64:v1.5.2
+FROM gcr.io/google_containers/heapster-amd64:v1.5.3
  
 MAINTAINER brande.wang@hotmail.com
-LABEL version="v1.5.2"
+LABEL version="v1.5.3"
 
