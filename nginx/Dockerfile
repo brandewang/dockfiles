@@ -25,10 +25,7 @@ RUN cd  /usr/share/vim/vim74/syntax &&\
 	wget --timeout=20 -O nginx.vim https://vim.sourceforge.io/scripts/download_script.php?src_id=19394 &&\
 	echo 'au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*  set ft=nginx' >> /usr/share/vim/vim74/filetype.vim
 
-#ADD config file
-ADD nginx.conf /etc/nginx/nginx.conf
-
 #Configure daemon
 ADD nginxd.conf /etc/supervisord.d/
 
-EXPOSE 80 1111
+EXPOSE 80 8080 1111
