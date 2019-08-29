@@ -13,4 +13,4 @@ do
 done
 
 #delete
-find ${LOG_DIR}  -regex '.*catalina.out\|.*start.log' -mtime +3|xargs rm -f
+find ${LOG_DIR}  -regex '.*catalina.out.*\|.*start.log.*' -mtime +3|xargs rm -f
