@@ -6,7 +6,7 @@ ADD jdk1.8.0_60.tar.gz /opt/
 
 RUN ln -s /opt/jdk1.8.0_60 /opt/jdk 
 
-ENV JAVA_HOME=/opt/jdk \ 
-	JRE_HOME=/opt/jdk/jre \
-	PATH=$JAVA_HOME/bin:$PATH \
-	CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+ENV JAVA_HOME opt/jdk  
+ENV JRE_HOME=/opt/jdk/jre 
+ENV PATH="$JAVA_HOME/bin:$PATH" 
+ENV CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
