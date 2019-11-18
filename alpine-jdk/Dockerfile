@@ -1,4 +1,4 @@
-FROM brandewang/alpine-base
+FROM brandewang/alpine-base-utf8
 
 MAINTAINER brande.wang@hotmail.com
 
