@@ -27,10 +27,12 @@ RUN apk add tzdata openssh-server ca-certificates --no-cache && \
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-bin-2.25-r0.apk && \
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-i18n-2.25-r0.apk && \
     apk add glibc-bin-2.25-r0.apk glibc-i18n-2.25-r0.apk glibc-2.25-r0.apk && \
-	rm -f glibc-bin-2.25-r0.apk glibc-i18n-2.25-r0.apk glibc-2.25-r0.apk && \
 	cat locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8 && \
 #custom
-    mkdir -p /data/logs
+    mkdir -p /data/logs &&\
+#clean install package
+	rm -rf locale.md glibc-bin-2.25-r0.apk glibc-i18n-2.25-r0.apk glibc-2.25-r0.apk /var/cache/apk/* && \
+	apk del tzdata 
 #setup supervisor(not necessary, about 50MB)
 #    apk add supervisor && \
 #    mkdir /etc/supervisor.d/ && \
