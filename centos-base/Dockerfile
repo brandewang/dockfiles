@@ -4,7 +4,7 @@ MAINTAINER brande.wang@hotmail.com
 
 ENV LANG en_US.utf8
 #yum install
-RUN yum install -y net-tools openssh-server epel-release &&\
+RUN yum install -y net-tools openssh-server iprouter epel-release &&\
 	yum install -y supervisor &&\
 #setup timezone
 	rm -rf /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
