@@ -2,3 +2,4 @@
 README.md
 *.gz
 *.jar
+!centos-nginx/*
