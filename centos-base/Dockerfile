@@ -6,6 +6,7 @@ ENV LANG en_US.utf8
 #yum install
 RUN yum install -y net-tools openssh-server iproute epel-release &&\
 	yum install -y supervisor &&\
+	yum install -y crontabs logrotate &&\
 #setup timezone
 	rm -rf /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
 #add locale zh_CN.utf8 
@@ -19,13 +20,14 @@ RUN yum install -y net-tools openssh-server iproute epel-release &&\
     mkdir -p ~/.ssh && \
     touch ~/.ssh/authorized_keys && \
 #custom
-    mkdir -p /data/logs
+    mkdir -p /opt/logs
 
 
 #ADD FILE
 ADD entrypoint.sh entrypoint.sh
 ADD supervisord.ini /etc/supervisord.d/supervisord.ini
 ADD sshd.ini /etc/supervisord.d/sshd.ini
+ADD crond.ini /etc/supervisord.d/crond.ini
 
 #ENTRYPOINT
 ENTRYPOINT ["./entrypoint.sh"]

@@ -16,7 +16,7 @@ RUN yum install make gcc patch -y &&\
 	cd /usr/local/src/nginx-1.12.2 &&\
 	patch -p1 < ../nginx_upstream_check_module/check_1.12.1+.patch &&\
 	./configure --prefix=/opt/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib/nginx/modules \
-				--conf-path=/opt/nginx/etc/nginx.conf --error-log-path=/data/logs/nginx/error.log --http-log-path=/data/logs/nginx/access.log \
+				--conf-path=/opt/nginx/etc/nginx.conf --error-log-path=/opt/logs/nginx/error.log --http-log-path=/opt/logs/nginx/access.log \
 				--pid-path=/var/run/nginx.pid --lock-path=/var/run/nginx.lock \
 				--http-client-body-temp-path=/var/cache/nginx/client_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp \
 				--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
