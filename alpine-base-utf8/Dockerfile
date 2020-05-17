@@ -29,7 +29,7 @@ RUN apk add tzdata openssh-server ca-certificates --no-cache && \
     apk add glibc-bin-2.25-r0.apk glibc-i18n-2.25-r0.apk glibc-2.25-r0.apk && \
 	cat locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8 && \
 #custom
-    mkdir -p /data/logs &&\
+    mkdir -p /opt/logs &&\
 #clean install package
 	rm -rf locale.md glibc-bin-2.25-r0.apk glibc-i18n-2.25-r0.apk glibc-2.25-r0.apk /var/cache/apk/* && \
 	apk del tzdata 
