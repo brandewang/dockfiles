@@ -28,6 +28,7 @@ RUN yum install make gcc patch -y &&\
 	rm -rf /usr/local/src/* &&\
 	yum remove make gcc patch -y 
 		
+ADD entrypoint.sh entrypoint.sh
 ADD nginx.ini /etc/supervisord.d/nginx.ini
 ADD log_archive.sh log_archive.sh
 
