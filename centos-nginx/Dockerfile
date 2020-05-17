@@ -29,6 +29,8 @@ RUN yum install make gcc patch -y &&\
 	yum remove make gcc patch -y 
 		
 ADD nginx.ini /etc/supervisord.d/nginx.ini
+ADD log_archive.sh log_archive.sh
+
 
 EXPOSE 80 8080 1111
 
