@@ -6,6 +6,4 @@ ADD brande-s.jar brande-s.jar
 
 ADD entrypoint.sh entrypoint.sh
 
-ENV JAVA_ARGS="-Xmx1000m"
-
 ENTRYPOINT ["./entrypoint.sh"]
